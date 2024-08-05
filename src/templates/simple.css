@@ -1,0 +1,15 @@
+.resume {
+    width: 210mm;
+    height: 297mm;
+}
+
+.resume__left {
+    width: 75mm;
+    height: 297;
+
+}
+
+.resume__right {
+    width: 135mm;
+    height: 297;
+}
