@@ -5,6 +5,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { ResumeInterface } from "../../types";
 import { Section } from "./components/Section";
+import { ContactItem } from "./components/ContactItem";
 const Simple: React.FC<ResumeInterface> = ({data}) => {
     return (
         <div className="resume bg-white mx-auto flex flex-row">
@@ -14,24 +15,9 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                 <h2 className="text-lg uppercase tracking-wide text-wrap font-thin">{data.title}</h2>
                 <Section isDark={true} title={"contact"}>
                     <ul className="flex flex-col gap-3">
-                        <li className="flex flex-row gap-2 items-center">
-                            <div className="bg-black h-5 w-5 grid place-content-center rounded-full">
-                                <FontAwesomeIcon color="#fff" icon={faPhone} width={8} height={8} />
-                            </div>
-                            <p>{data.contact.phone}</p>
-                        </li>
-                        <li className="flex flex-row gap-2 items-center">
-                            <div className="bg-black h-5 w-5 grid place-content-center rounded-full">
-                                <FontAwesomeIcon color="#fff" icon={faEnvelope} width={8} height={8} />
-                            </div>
-                            <p>{data.contact.mail}</p>
-                        </li>
-                        <li style={{ flex: "flex", flexDirection: "row", justifyItems: "center" }} className="flex flex-row gap-2 items-center">
-                            <div className="bg-black h-5 w-5 grid place-content-center rounded-full">
-                                <FontAwesomeIcon color="#fff" icon={faLocationDot} width={8} height={8} />
-                            </div>
-                            <p>{data.contact.location}</p>
-                        </li>
+                        <ContactItem value={data.contact.phone} icon={faPhone} />
+                        <ContactItem value={data.contact.mail} icon={faEnvelope} />
+                        <ContactItem value={data.contact.location} icon={faLocationDot} />
                     </ul>
                 </Section>
                 <Section isDark={true} title={"skills"}>
