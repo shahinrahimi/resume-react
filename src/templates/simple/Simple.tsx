@@ -4,7 +4,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { ResumeInterface } from "../../types";
-
+import { Section } from "./components/Section";
 const Simple: React.FC<ResumeInterface> = ({data}) => {
     return (
         <div className="resume bg-white mx-auto flex flex-row">
@@ -12,8 +12,7 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                 <h1 className="text-4xl uppercase tracking-wider">{data.firstName}</h1>
                 <h1 className="text-4xl uppercase tracking-wider">{data.lastName}</h1>
                 <h2 className="text-lg uppercase tracking-wide text-wrap font-thin">{data.title}</h2>
-                <section className="mb-4">
-                    <h2 className="text-lg uppercase mt-2 border-b-4 border-white pb-2 mb-4">contact</h2>
+                <Section isDark={true} title={"contact"}>
                     <ul className="flex flex-col gap-3">
                         <li className="flex flex-row gap-2 items-center">
                             <div className="bg-black h-5 w-5 grid place-content-center rounded-full">
@@ -34,9 +33,8 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                             <p>{data.contact.location}</p>
                         </li>
                     </ul>
-                </section>
-                <section className="mb-4">
-                    <h2 className="text-lg uppercase mt-2 border-b-4 border-white pb-2 mb-4">skills</h2>
+                </Section>
+                <Section isDark={true} title={"skills"}>
                     <ul className="flex flex-col list-disc ml-8 gap-2">
                         {data.skills.map((s, i) => {
                             return (
@@ -44,10 +42,8 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                             )
                         })}
                     </ul>
-                </section>
-
-                <section className="mb-4">
-                    <h2 className="text-lg uppercase mt-2 border-b-4 border-white pb-2 mb-4">languages</h2>
+                </Section>
+                <Section isDark={true} title={"languages"}>
                     <ul className="flex flex-col list-disc ml-8 gap-1">
                         {data.languages.map((l,i) => {
                             return (
@@ -58,9 +54,8 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                             )
                         })}
                     </ul>
-                </section>
-                <section className="mb-4">
-                    <h2 className="text-lg uppercase mt-2 border-b-4 border-white pb-2 mb-4">entertainments</h2>
+                </Section>
+                <Section isDark={true} title={"entertainment"}>
                     <ul className="flex flex-row ml-8 gap-2">
                         {data.entertainments.map((e, i) => {
                             return (
@@ -68,16 +63,13 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                             )
                         })}
                     </ul>
-                </section>
-
+                </Section>
             </div>
-            <div className="resume__right bg-white p-6 flex flex-col gap-2">
-                <section className="mb-4">
-                    <h2 className="text-lg uppercase mt-2 border-b-4 border-zinc-200 pb-2 mb-4">profossional summary</h2>
+            <div className="resume__right bg-white p-6 flex flex-col gap-2 w-full">
+                <Section isDark={false} title={"professional summary"}>
                     <p>{data.summary}</p>
-                </section>
-                <section className="mb-4">
-                    <h2 className="text-lg uppercase mt-2 border-b-4 border-zinc-200 pb-2 mb-4">experience</h2>
+                </Section>
+                <Section isDark={false} title={"experience"}>
                     <ul className="flex flex-col gap-4">
                         {data.jobs.map((j, i) => {
                             return (
@@ -98,9 +90,8 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                             )
                         })}
                     </ul>
-                </section>
-                <section className="mb-4">
-                    <h2 className="text-lg uppercase mt-2 border-b-4 border-zinc-200 pb-2 mb-4">education</h2>
+                </Section>
+                <Section isDark={false} title={"educations"}>
                     <ul className="flex flex-col gap-4">
                         {data.educations.map((e,i) => {
                             return (
@@ -112,8 +103,7 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                             )
                         })}
                     </ul>
-                </section>
-
+                </Section>
             </div>
         </div>
     )
