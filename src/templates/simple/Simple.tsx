@@ -1,11 +1,12 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { ResumeInterface } from "../../types";
 import { Section } from "./components/Section";
 import { ContactItem } from "./components/ContactItem";
+import { LanguageItem } from "./components/LanguageItem";
+
 const Simple: React.FC<ResumeInterface> = ({data}) => {
     return (
         <div className="resume bg-white mx-auto flex flex-row">
@@ -31,23 +32,12 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                 </Section>
                 <Section isDark={true} title={"languages"}>
                     <ul className="flex flex-col list-disc ml-8 gap-1">
-                        {data.languages.map((l,i) => {
-                            return (
-                                <li key={i}>
-                                    <p className="capitalize font-bold mb-0 pb-0">{l.lang}</p>
-                                    <p className="capitalize text-sm font-light">{l.level}</p>
-                                </li>
-                            )
-                        })}
+                        {data.languages.map((l,i) => <LanguageItem key={i} lang={l.lang} lvl={l.level}/>)}
                     </ul>
                 </Section>
                 <Section isDark={true} title={"entertainment"}>
                     <ul className="flex flex-row ml-8 gap-2">
-                        {data.entertainments.map((e, i) => {
-                            return (
-                                <li key={i}><p>{e}</p></li>
-                            )
-                        })}
+                        {data.entertainments.map((e, i) => <li key={i}><p>{e}</p></li>)}
                     </ul>
                 </Section>
             </div>
