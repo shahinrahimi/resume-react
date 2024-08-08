@@ -6,8 +6,10 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'ubuntu' : ["Ubuntu Mono", "monospace"],
-      'roboto' : ["Roboto", "sans-serif"]
+      'ubuntu': ["Ubuntu Mono", "monospace"],
+      'roboto': ["Roboto", "sans-serif"],
+      'nunito': ["Nunito Sans", "sans-serif"],
+      'catama': ["Catamaran", "sans-serif"]
     },
     extend: {},
   },

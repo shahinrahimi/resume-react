@@ -11,7 +11,7 @@ export const ContactItem:React.FC<ContactItemProp> = ({value, icon}) => {
         <div className="bg-black h-5 w-5 grid place-content-center rounded-full">
             <FontAwesomeIcon color="#fff" icon={icon} width={8} height={8} />
         </div>
-        <p>{value}</p>
+        <p className='text-sm'>{value}</p>
     </li>
 )
 }

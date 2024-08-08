@@ -9,10 +9,10 @@ import { LanguageItem } from "./components/LanguageItem";
 
 const Simple: React.FC<ResumeInterface> = ({data}) => {
     return (
-        <div className="resume bg-white mx-auto flex flex-row">
+        <div className="resume bg-white mx-auto flex flex-row font-catama">
             <div className="resume__left bg-zinc-200 p-6 flex flex-col gap-2">
-                <h1 className="text-4xl uppercase tracking-wider">{data.firstName}</h1>
-                <h1 className="text-4xl uppercase tracking-wider">{data.lastName}</h1>
+                <h1 className="text-4xl uppercase tracking-wider font-nunito">{data.firstName}</h1>
+                <h1 className="text-4xl uppercase tracking-wider font-nunito">{data.lastName}</h1>
                 <h2 className="text-lg uppercase tracking-wide text-wrap font-thin">{data.title}</h2>
                 <Section isDark={true} title={"contact"}>
                     <ul className="flex flex-col gap-3">
@@ -21,11 +21,20 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                         <ContactItem value={data.contact.location} icon={faLocationDot} />
                     </ul>
                 </Section>
+                <Section isDark={true} title={"tech stack"}>
+                    <ul className="flex flex-col list-disc ml-8 gap-2">
+                        {data.techStacks.map((s, i) => {
+                            return (
+                                <li className="font-ubuntu" key={i}>{s}</li>
+                            )
+                        })}
+                    </ul>
+                </Section>
                 <Section isDark={true} title={"skills"}>
                     <ul className="flex flex-col list-disc ml-8 gap-2">
                         {data.skills.map((s, i) => {
                             return (
-                                <li className="font-ubuntu" key={i}>{s}</li>
+                                <li className="font-ubuntu" key={i}>{s.title}{s.level}</li>
                             )
                         })}
                     </ul>
@@ -36,8 +45,8 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                     </ul>
                 </Section>
                 <Section isDark={true} title={"entertainment"}>
-                    <ul className="flex flex-row ml-8 gap-2">
-                        {data.entertainments.map((e, i) => <li key={i}><p>{e}</p></li>)}
+                    <ul className="flex flex-row ml-4 gap-2">
+                        {data.entertainments.map((e, i) => <li key={i}><p className="capitalize">{e}</p></li>)}
                     </ul>
                 </Section>
             </div>
@@ -53,11 +62,11 @@ const Simple: React.FC<ResumeInterface> = ({data}) => {
                                 <p className="text-zinc-500">{j.date}</p>
                                 <h3 className="text-base font-bold">{j.title}</h3>
                                 <p className="capitalize">{j.location}</p>
-                                <ul className="list-disc ml-4">
+                                <ul className="list-disc ml-8">
                                     {
                                         j.experiences.map((e, index) => {
                                             return (
-                                                <li key={index + 100}>{e}</li>
+                                                <li key={index + 100} className="mb-1">{e}</li>
                                             )
                                         })
                                     }

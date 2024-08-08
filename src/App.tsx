@@ -4,11 +4,11 @@ import jsPDF from "jspdf";
 import ResumeLayout from "./layout/ResumeLayout";
 import Simple from "./templates/simple/Simple";
 import { data } from "./types";
+
 function App() {
 
   const resumeRef = React.useRef<HTMLDivElement>(null)
-
-  const handleGeneretePdf = () => {
+  const handleGeneratePdf = () => {
     const input = resumeRef.current;
     if (input) {
       html2canvas(input, { scale: 2, useCORS: true })
@@ -24,11 +24,11 @@ function App() {
   }
 
   return (
-    <div className='bg-cyan-600 font-roboto'>
+    <div className='bg-cyan-600'>
       <ResumeLayout ref={resumeRef} >
         <Simple data={data} />
       </ResumeLayout>
-      <button className="mx-auto mt-8 w-80 h-10 grid place-content-center bg-black text-white" onClick={handleGeneretePdf}>Generate PDF</button>
+      <button className="mx-auto mt-8 w-80 h-10 grid place-content-center bg-black text-white" onClick={handleGeneratePdf}>Generate PDF</button>
     </div>
   )
 }
