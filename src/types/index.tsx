@@ -66,7 +66,7 @@ export const data: ResumeData = {
             level: 3
         }
     ],
-    techStacks: ["Go", "Python", "Javascript", "Typescript", "React.js", "React Native", "Node.js", "HTML", "CSS", "linux", "MongoDB", "SQL", "Docker", "R"],
+    techStacks: ["Go", "Python", "JS", "TS", "R", "React", "HTML", "CSS", "React Native", "Node", "Linux", "MongoDB", "SQL", "Docker"],
     languages: [
         {
             lang: "english",
@@ -87,25 +87,25 @@ export const data: ResumeData = {
         {
             date: "January 2024 - June 2024",
             title: "Front End developer",
-            location: "istanbul, turkey",
+            location: "Zeepay, Istanbul, turkey",
             experiences: [
-                "Lead frontend development using React Native and React, creating dynamic user interfaces for mobile and web platforms.",
-                "Collaborate with cross-functional teams to deliver features, ensuring optimal user experience and performance."
+                "Refactored, built, and deployed front-end applications using React and React Native, ensuring seamless integration and high performance across platforms.",
+                "Developed a custom debugger for API calls within mobile applications, enhancing communication with a secure, encrypted PHP backend."
             ]
         },
         {
             date: "January 2019 - June 2023",
             title: "Self-Employed",
-            location: "istanbul, turkey",
+            location: "Freelancer.com, Istanbul, Turkey",
             experiences: [
-                "Engineered and secured APIs using Go, implementing authentication, authorization, and rate-limiting features with libraries like Mux and Echo.",
-                "Designed and deployed Telegram bots using Go, ensuring reliability and performance.",
-                "Built full-stack applications using the GOT stack (Go, Templ, Tailwind CSS, SQLite3), including user authentication, CRUD operations, and responsive design.",
-                "Designed and developed full-stack applications using the MERN stack (MongoDB, Express.js, React, Node.js), including user management systems, dashboards, admin panel.",
-                "Developed data analysis tools using libraries like NumPy, Pandas, Matplotlib, and SciPy to extract and visualize data.",
-                "Built and deployed GUI applications using Tkinter and PyQt5, delivering intuitive user experiences.",
-                "Created and maintained web scraping tools using Selenium, BeautifulSoup, and Scrapy, automating data collection tasks.",
-                "Developed Shiny applications and dynamic reports using R and Markdown, providing interactive data visualizations and insights for clients."
+                "Designed, developed, and deployed MERN stack applications using modern TypeScript frameworks, Redux, React Query, and Tailwind CSS, resulting in highly responsive and maintainable solutions.",
+                "Built a custom admin panel utilizing Node.js and React, providing intuitive management tools tailored to client needs.",
+                "Created a series of standalone applications using Python and PyQt5, delivering efficient and user-friendly desktop solutions.",
+                "Developed a game prototype using Python and Tkinter, implementing recursive algorithms to create complex, engaging gameplay mechanics.",
+                "Engineered robust RESTful applications with Golang, incorporating advanced authentication and authorization protocols for secure user interactions.",
+                "Developed full-stack applications with Go, Templ, SQLite, and Tailwind CSS, achieving a balance of performance and aesthetics.",
+                "Built full-stack applications with Go as the backend language and React for the frontend, enabling scalable and responsive user experiences.",
+                "Developed various scraping tools and bots across multiple languages, including Go, Python, and VBA, automating data collection and enhancing operational efficiency."
             ]
         }
     ],
